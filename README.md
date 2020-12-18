@@ -20,12 +20,12 @@ To run the workflow and see the results with the data provided in the `data` fol
 1) Clone the repo
 
 ```bash
-git clone 
+git clone https://github.com/mdylan2/btc_price_predictor.git
 ```
 2) Navigate into the app folder
 
 ```bash
-cd 
+cd btc_price_predictor
 ```
 
 3) Install the requirements and activate the pipenv shell
