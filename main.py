@@ -13,14 +13,17 @@ def main():
     '''
     # Trying to set up the app, catching any errors
     # Setting up logging, arg parsing, config file
+    logging.getLogger().setLevel(logging.INFO)
+    logging.info("Logging set up")
+
     try:
-        configs = set_up_app()
+        logging.info(f"Trying to load config.json...")
+        # configs = set_up_app()
+        with open("config.json") as f:
+            configs = json.load(f, "r")
+        logging.info(f"Successfully loaded configuration file!")
     except:
-        logging.info("Something went wrong setting up the app. Exiting.")
-        return
-    
-    if configs is None:
-        logging.info("Something went wrong setting up the config file. Exiting.")
+        print("Something went wrong reading the config file. Exiting.")
         return
     
     # Instantiating the dataloader in the core/dataloader module
@@ -70,11 +73,11 @@ def main():
     
     # Compute Sharpe Ratio and CAGR for system and market, market being holding BTC
     system_metrics, market_metrics = compute_metrics(new_df)
-    logging.info(f"Market CAGR: {system_metrics[0]*100:.1f}%")
-    logging.info(f"Market Sharpe: {system_metrics[1]:.1f}")
+    print(f"System CAGR: {system_metrics[0]*100:.1f}%")
+    print(f"System Sharpe: {system_metrics[1]:.1f}")
     
-    logging.info(f"System CAGR: {market_metrics[0]*100:.1f}%")
-    logging.info(f"System Sharpe: {market_metrics[1]:.1f}")
+    print(f"Market CAGR: {market_metrics[0]*100:.1f}%")
+    print(f"Market Sharpe: {market_metrics[1]:.1f}")
     
     # Plot the results
     plot_returns(new_df)

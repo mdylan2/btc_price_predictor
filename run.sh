@@ -1,1 +1,1 @@
-python main.py config.json
+python main.py
