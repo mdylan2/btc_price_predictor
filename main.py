@@ -1,4 +1,5 @@
 import os 
+import json
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3' # USE THIS TO DISABLE ALL LOGGING INFORMATION FROM TENSORFLOW
 
 from core.utils import *
@@ -19,8 +20,8 @@ def main():
     try:
         logging.info(f"Trying to load config.json...")
         # configs = set_up_app()
-        with open("config.json") as f:
-            configs = json.load(f, "r")
+        with open("config.json", "r") as f:
+            configs = json.load(f)
         logging.info(f"Successfully loaded configuration file!")
     except:
         print("Something went wrong reading the config file. Exiting.")
