@@ -14,6 +14,7 @@ Here's a list of files/folders in the directory:
 - `main.py`: The controller that puts everything together to run the train-val-test and evaluate workflow
 - `run.cmd/run.sh`: Files that are used to run the workflow
 - `data`: Contains the data used in the project
+- `Presentation.pptx`: Contains the presentation for the project
 
 ## Running a Workflow
 To run the workflow and see the results with the data provided in the `data` folder, follow the instructions below:
@@ -22,7 +23,7 @@ To run the workflow and see the results with the data provided in the `data` fol
 ```bash
 git clone https://github.com/mdylan2/btc_price_predictor.git
 ```
-2) Navigate into the app folder
+2) Navigate into the app folder where the `Pipefile.lock` is located
 
 ```bash
 cd btc_price_predictor
